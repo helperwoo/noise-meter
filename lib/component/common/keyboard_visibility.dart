@@ -5,7 +5,7 @@ import 'package:flutter_detect_decibel/main.dart';
 class KeyboardVisibilityBuilder extends StatefulWidget {
   final Widget child;
 
-  const KeyboardVisibilityBuilder({Key? key, required this.child}) : super(key: key);
+  const KeyboardVisibilityBuilder({super.key, required this.child});
 
   @override
   _KeyboardVisibilityBuilderState createState() => _KeyboardVisibilityBuilderState();

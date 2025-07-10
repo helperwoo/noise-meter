@@ -29,7 +29,7 @@ class DetectController extends GetxController {
 
   @override
   void onInit() {
-    noiseMeter = new NoiseMeter(onError);
+    noiseMeter = new NoiseMeter();
     start();
     super.onInit();
   }
@@ -114,7 +114,7 @@ class DetectController extends GetxController {
         noiseSubscription!.cancel();
         noiseSubscription = null;
       }
-      noiseSubscription = noiseMeter.noise.listen(onData);
+      noiseSubscription = noiseMeter.noise.listen(onData, onError: onError);
     } catch (e) {
       print('\n[녹음시작] 에러발생:\n에러내용: $e\n');
     }
